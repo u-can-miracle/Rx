@@ -5,9 +5,8 @@ module.exports = {
   mode: 'development',
   entry: [
 		'babel-polyfill',
-		'react-hot-loader/patch',
 		'webpack-hot-middleware/client',
-		'./src/client/index.tsx',
+		'./src/client/index.ts',
 	],
   output: {
     filename: 'bundle.js',
@@ -34,10 +33,6 @@ module.exports = {
             babelrc: false,
             presets: [
               '@babel/preset-typescript',
-              '@babel/preset-react',
-            ],
-            plugins: [
-              'react-hot-loader/babel',
             ],
           },
         },

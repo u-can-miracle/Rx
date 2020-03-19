@@ -1,4 +1,3 @@
-import renderReactAppHtml from './renderReactAppHtml'
 // import getPreloadedState from '../utils/getPreloadedState'
 
 async function renderPageHtml(
@@ -10,7 +9,6 @@ async function renderPageHtml(
 	// 	newPassword,
 	// 	req.originalUrl,
 	// )
-	const reactAppHtml = renderReactAppHtml(req.url)
 
 	return `
 	<!DOCTYPE html>
@@ -23,7 +21,6 @@ async function renderPageHtml(
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
-	  <div id="root">${reactAppHtml}</div>
 	  <script src="/bundle.js"></script>
 	</body>
 	</html>
