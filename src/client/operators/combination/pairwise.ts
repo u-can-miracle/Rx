@@ -9,5 +9,3 @@ const subscribe = example.subscribe(
   error => console.log('error', error),
   () => console.log('complete'),
 )
-
-// ToDo: pairwise was last => proceed next which is above pairwise
