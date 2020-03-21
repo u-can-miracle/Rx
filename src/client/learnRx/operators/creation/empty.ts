@@ -28,8 +28,7 @@ import { FromEventTarget } from 'rxjs/internal/observable/fromEvent'
 
 console.clear()
 
-const source = fromEvent(document, 'click')
-
-const example = source.pipe(map(event => `Event time ${event.timeStamp}`))
-
-const subscribe = example.subscribe(console.log)
+const subscribe = empty().subscribe({
+  next: () => console.log('next'),
+  complete: () => console.log('complete'),
+})

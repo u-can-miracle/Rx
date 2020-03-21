@@ -28,8 +28,6 @@ import { FromEventTarget } from 'rxjs/internal/observable/fromEvent'
 
 console.clear()
 
-const source = fromEvent(document, 'click')
+const promiseSource = from(new Promise(resolve => resolve(1)))
 
-const example = source.pipe(map(event => `Event time ${event.timeStamp}`))
-
-const subscribe = example.subscribe(console.log)
+const subscribe = promiseSource.subscribe(console.log)
