@@ -7,8 +7,6 @@ import {
   generate,
   interval,
   of,
-  range,
-  throwError,
 } from 'rxjs'
 import {
   take,
@@ -25,4 +23,6 @@ import { FromEventTarget } from 'rxjs/internal/observable/fromEvent'
 
 console.clear()
 
-// const source = 
+const source = of({ name: 'Brian'}, [1,2,3], function fn() { return 123 })
+
+const subscribe = source.subscribe(console.log)

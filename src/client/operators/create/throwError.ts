@@ -25,4 +25,10 @@ import { FromEventTarget } from 'rxjs/internal/observable/fromEvent'
 
 console.clear()
 
-// const source = 
+const source = throwError('Error')
+
+const subscribe = source.subscribe({
+  next: val => console.log('val ', val),
+  complete: () => console.log('complete'),
+  error: err => console.log('err', err),
+})

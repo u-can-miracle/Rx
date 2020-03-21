@@ -1,15 +1,6 @@
 import 'babel-polyfill'
 
-import {
-  Observable,
-  fromEvent,
-  from,
-  generate,
-  interval,
-  of,
-  range,
-  throwError,
-} from 'rxjs'
+import { Observable, fromEvent, from, generate } from 'rxjs'
 import {
   take,
   mergeMap,
@@ -25,4 +16,8 @@ import { FromEventTarget } from 'rxjs/internal/observable/fromEvent'
 
 console.clear()
 
-// const source = 
+generate(
+  2,
+  x => x <= 22,
+  x => x + 3
+).subscribe(console.log)
