@@ -1,19 +1,6 @@
 import 'babel-polyfill'
 
-import {
-  Observable,
-  fromEvent,
-  from,
-  interval,
-  defer,
-  of,
-  timer,
-  merge,
-  empty,
-  generate,
-  range,
-  throwError,
-} from 'rxjs'
+import { Observable, fromEvent, from, generate } from 'rxjs'
 import {
   take,
   mergeMap,
@@ -24,9 +11,13 @@ import {
   retry,
   retryWhen,
   delay,
-  combineAll,
 } from 'rxjs/operators'
-import { ajax } from 'rxjs/ajax'
 import { FromEventTarget } from 'rxjs/internal/observable/fromEvent'
 
 console.clear()
+
+generate(
+  2,
+  x => x <= 22,
+  x => x + 3
+).subscribe(console.log)

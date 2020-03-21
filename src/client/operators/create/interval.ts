@@ -4,15 +4,8 @@ import {
   Observable,
   fromEvent,
   from,
-  interval,
-  defer,
-  of,
-  timer,
-  merge,
-  empty,
   generate,
-  range,
-  throwError,
+  interval,
 } from 'rxjs'
 import {
   take,
@@ -24,9 +17,11 @@ import {
   retry,
   retryWhen,
   delay,
-  combineAll,
 } from 'rxjs/operators'
-import { ajax } from 'rxjs/ajax'
 import { FromEventTarget } from 'rxjs/internal/observable/fromEvent'
 
 console.clear()
+
+const source = interval(1000)
+
+const subscribe = source.subscribe(console.log)

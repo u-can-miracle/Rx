@@ -4,15 +4,9 @@ import {
   Observable,
   fromEvent,
   from,
-  interval,
-  defer,
-  of,
-  timer,
-  merge,
-  empty,
   generate,
-  range,
-  throwError,
+  interval,
+  of,
 } from 'rxjs'
 import {
   take,
@@ -24,9 +18,11 @@ import {
   retry,
   retryWhen,
   delay,
-  combineAll,
 } from 'rxjs/operators'
-import { ajax } from 'rxjs/ajax'
 import { FromEventTarget } from 'rxjs/internal/observable/fromEvent'
 
 console.clear()
+
+const source = of({ name: 'Brian'}, [1,2,3], function fn() { return 123 })
+
+const subscribe = source.subscribe(console.log)

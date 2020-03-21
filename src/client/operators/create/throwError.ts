@@ -4,13 +4,9 @@ import {
   Observable,
   fromEvent,
   from,
-  interval,
-  defer,
-  of,
-  timer,
-  merge,
-  empty,
   generate,
+  interval,
+  of,
   range,
   throwError,
 } from 'rxjs'
@@ -24,9 +20,15 @@ import {
   retry,
   retryWhen,
   delay,
-  combineAll,
 } from 'rxjs/operators'
-import { ajax } from 'rxjs/ajax'
 import { FromEventTarget } from 'rxjs/internal/observable/fromEvent'
 
 console.clear()
+
+const source = throwError('Error')
+
+const subscribe = source.subscribe({
+  next: val => console.log('val ', val),
+  complete: () => console.log('complete'),
+  error: err => console.log('err', err),
+})
