@@ -11,5 +11,3 @@ const fakeRequest = of('Network request  completed')
 const example = sampleInterval.pipe(concatMapTo(fakeRequest))
 
 const subscribe = example.subscribe(val => console.log(val))
-
-// TODO: exhaustMap is next
